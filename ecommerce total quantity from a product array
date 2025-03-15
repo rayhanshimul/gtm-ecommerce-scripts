@@ -1,0 +1,21 @@
+function getTotalQuantity() {
+  var products = {{dlv - ecommerce.cart_contents.products}};
+  var totalQuantity = 0;
+  for (var i = 0; i < products.length; i++) {
+    totalQuantity += parseInt(products[i].quantity);
+  }
+  return totalQuantity;
+}
+
+function() {
+  var url = {{Page URL}};
+  var submittedValue = null;
+  var params = new URL(url).searchParams; // Retrieve the query parameters from the URL
+  var submitted = params.get('submitted'); // Retrieve the value of the 'submitted' parameter
+
+  if (submitted) {
+    submittedValue = submitted;
+  }
+
+  return submittedValue;
+}
